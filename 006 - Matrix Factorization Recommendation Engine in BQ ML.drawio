@@ -1,0 +1,280 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram name="BigQuery ML - Matrix Factorization" id="bqml-matrix-factorization">
+    <mxGraphModel dx="1600" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2100" pageHeight="1450" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== CENTRAL NODE ===== -->
+        <mxCell id="center" value="&lt;b&gt;Matrix Factorization&lt;/b&gt;&lt;br&gt;Recommendation Engine&lt;br&gt;&lt;i&gt;BigQuery ML&lt;/i&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1b5e20;fontColor=#ffffff;strokeColor=#0a3d0a;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="555" width="270" height="105" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 1: WORKFLOW (left) ===== -->
+        <mxCell id="b1" value="&lt;b&gt;Workflow&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1565c0;fontColor=#ffffff;strokeColor=#0d47a1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="350" width="165" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1565c0;strokeWidth=2;" edge="1" source="center" target="b1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-1" value="1. CREATE MODEL&lt;br&gt;&lt;i&gt;matrix_factorization&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="165" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-2" value="2. ML.EVALUATE&lt;br&gt;&lt;i&gt;RMSE/MAE for EXPLICIT&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="228" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-3" value="3. ML.RECOMMEND&lt;br&gt;&lt;i&gt;top-N items per user&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="291" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;strokeWidth=2;" edge="1" source="b1" target="b1-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-4" value="4. ML.PREDICT&lt;br&gt;&lt;i&gt;score specific user-item pairs&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="354" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-5" value="5. ML.WEIGHTS&lt;br&gt;&lt;i&gt;retrieve embedding vectors&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="417" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 2: KEY OPTIONS (bottom-left) ===== -->
+        <mxCell id="b2" value="&lt;b&gt;Key OPTIONS&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;fontColor=#ffffff;strokeColor=#1b5e20;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="215" y="700" width="165" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#2e7d32;strokeWidth=2;" edge="1" source="center" target="b2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-1" value="user_col — required&lt;br&gt;&lt;i&gt;user identifier column&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="590" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-2" value="item_col — required&lt;br&gt;&lt;i&gt;item identifier column&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="653" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-3" value="rating_col&lt;br&gt;&lt;i&gt;required for EXPLICIT only&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="716" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-4" value="num_factors (default 8)&lt;br&gt;&lt;i&gt;embedding dimensions k&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="779" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-5" value="l2_reg + max_iterations&lt;br&gt;&lt;i&gt;regularization + ALS rounds&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="842" width="195" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 3: EXPLICIT vs IMPLICIT (top-right) ===== -->
+        <mxCell id="b3" value="&lt;b&gt;EXPLICIT vs IMPLICIT&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bf360c;fontColor=#ffffff;strokeColor=#870000;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="230" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#bf360c;strokeWidth=2;" edge="1" source="center" target="b3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-1" value="EXPLICIT: star ratings, scores&lt;br&gt;&lt;i&gt;rating_col required, ALS algorithm&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="100" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b3" target="b3-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-2" value="IMPLICIT: clicks, views, purchases&lt;br&gt;&lt;i&gt;no rating_col, uses WALS algorithm&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="168" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b3" target="b3-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-3" value="wals_alpha (default 40)&lt;br&gt;&lt;i&gt;IMPLICIT only — confidence scaling&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="236" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b3" target="b3-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-4" value="c(u,i) = 1 + alpha x count&lt;br&gt;&lt;i&gt;WALS confidence formula&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="304" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b3" target="b3-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 4: IMPLICIT METRICS (bottom-right) ===== -->
+        <mxCell id="b4" value="&lt;b&gt;Ranking Metrics (IMPLICIT)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a1b9a;fontColor=#ffffff;strokeColor=#4a148c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="680" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6a1b9a;strokeWidth=2;" edge="1" source="center" target="b4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-1" value="Precision@K&lt;br&gt;&lt;i&gt;relevant items in top-K&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="560" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-2" value="Recall@K&lt;br&gt;&lt;i&gt;relevant items found in top-K&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="625" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-3" value="MAP — Mean Avg Precision&lt;br&gt;&lt;i&gt;avg P@K across all users&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="690" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-4" value="NDCG — Normalised DCG&lt;br&gt;&lt;i&gt;rewards relevant items ranked higher&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="755" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-note" value="Must be computed MANUALLY&lt;br&gt;&lt;i&gt;BQML does not return ranking metrics&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="820" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-note" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;" edge="1" source="b4" target="b4-note" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 5: COLD START (bottom-centre) ===== -->
+        <mxCell id="b5" value="&lt;b&gt;Cold Start Problem&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c62828;fontColor=#ffffff;strokeColor=#b71c1c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="910" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#c62828;strokeWidth=2;" edge="1" source="center" target="b5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-1" value="New user — no vector&lt;br&gt;&lt;i&gt;use popularity fallback&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="430" y="1025" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;" edge="1" source="b5" target="b5-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-2" value="New item — no vector&lt;br&gt;&lt;i&gt;use content-based features&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="645" y="1025" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;" edge="1" source="b5" target="b5-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-3" value="Sparse data&lt;br&gt;&lt;i&gt;reduce num_factors, increase l2_reg&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="860" y="1025" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;" edge="1" source="b5" target="b5-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-4" value="MF cannot solve alone&lt;br&gt;&lt;i&gt;hybrid or content-based needed&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1075" y="1025" width="195" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;" edge="1" source="b5" target="b5-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 6: HOW IT WORKS (top-centre) ===== -->
+        <mxCell id="b6" value="&lt;b&gt;How It Works&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f57f17;fontColor=#ffffff;strokeColor=#e65100;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="295" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#f57f17;strokeWidth=2;" edge="1" source="center" target="b6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-1" value="R = U x V^T&lt;br&gt;&lt;i&gt;user-item matrix decomposition&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="530" y="140" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b6" target="b6-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-2" value="k latent factors per user + item&lt;br&gt;&lt;i&gt;shared embedding space&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="140" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b6" target="b6-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-3" value="ALS (EXPLICIT) / WALS (IMPLICIT)&lt;br&gt;&lt;i&gt;alternating least squares algorithm&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="970" y="140" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b6" target="b6-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 7: EMBEDDINGS DOWNSTREAM (middle-right) ===== -->
+        <mxCell id="b7" value="&lt;b&gt;Embeddings Downstream&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#37474f;fontColor=#ffffff;strokeColor=#1c313a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="455" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#37474f;strokeWidth=2;" edge="1" source="center" target="b7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-1" value="Vertex AI Matching Engine&lt;br&gt;&lt;i&gt;ANN search at scale&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="400" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b7" target="b7-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-2" value="Item-item similarity&lt;br&gt;&lt;i&gt;compare item embedding vectors&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="465" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b7" target="b7-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-3" value="User segmentation&lt;br&gt;&lt;i&gt;cluster users by latent vectors&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1625" y="530" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b7" target="b7-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EXAM TIPS BOX ===== -->
+        <mxCell id="tips" value="&lt;b&gt;Exam Tips&lt;/b&gt;&lt;br&gt;- ML.RECOMMEND generates top-N items (not ML.PREDICT)&lt;br&gt;- ML.PREDICT scores specific user-item pairs&lt;br&gt;- IMPLICIT needs no rating_col — uses interaction counts&lt;br&gt;- wals_alpha only applies to IMPLICIT feedback&lt;br&gt;- Ranking metrics (MAP/NDCG) computed manually&lt;br&gt;- Cold start cannot be solved by MF alone&lt;br&gt;- ML.WEIGHTS returns embedding vectors for export&lt;br&gt;- ALS = EXPLICIT / WALS = IMPLICIT algorithm" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f9a825;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="770" y="1105" width="300" height="155" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

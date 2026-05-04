@@ -1,0 +1,294 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram name="BigQuery ML - Time-Series Forecasting" id="bqml-timeseries">
+    <mxGraphModel dx="1600" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2200" pageHeight="1500" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== CENTRAL NODE ===== -->
+        <mxCell id="center" value="&lt;b&gt;Time-Series Forecasting&lt;/b&gt;&lt;br&gt;BigQuery ML&lt;br&gt;&lt;i&gt;ARIMA_PLUS / ARIMA_PLUS_XREG&lt;/i&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#01579b;fontColor=#ffffff;strokeColor=#003c6b;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="560" width="290" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 1: MODEL TYPES (top-left) ===== -->
+        <mxCell id="b1" value="&lt;b&gt;Model Types&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1565c0;fontColor=#ffffff;strokeColor=#0d47a1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="240" width="175" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1565c0;strokeWidth=2;" edge="1" source="center" target="b1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-1" value="ARIMA_PLUS&lt;br&gt;&lt;i&gt;univariate — time + label only&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="100" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-2" value="ARIMA_PLUS_XREG&lt;br&gt;&lt;i&gt;multivariate — adds external regressors&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="168" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-3" value="Auto-ARIMA (p,d,q) search&lt;br&gt;&lt;i&gt;uses AIC to select best order&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="236" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-4" value="KPSS test for stationarity&lt;br&gt;&lt;i&gt;determines differencing order d&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="304" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 2: WORKFLOW (left) ===== -->
+        <mxCell id="b2" value="&lt;b&gt;Workflow&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;fontColor=#ffffff;strokeColor=#1b5e20;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="700" width="175" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#2e7d32;strokeWidth=2;" edge="1" source="center" target="b2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-1" value="1. CREATE MODEL&lt;br&gt;&lt;i&gt;ARIMA_PLUS or ARIMA_PLUS_XREG&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="560" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-2" value="2. ML.EVALUATE&lt;br&gt;&lt;i&gt;no input table needed!&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="628" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-3" value="3. ML.ARIMA_COEFFICIENTS&lt;br&gt;&lt;i&gt;inspect fitted (p,d,q) params&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="696" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-4" value="4. ML.EXPLAIN_FORECAST&lt;br&gt;&lt;i&gt;decompose into components&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="10" y="764" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-5" value="5. ML.FORECAST&lt;br&gt;&lt;i&gt;NOT ML.PREDICT — key exam point!&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="832" width="205" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;strokeWidth=2;" edge="1" source="b2" target="b2-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 3: KEY OPTIONS (top-centre) ===== -->
+        <mxCell id="b3" value="&lt;b&gt;Key OPTIONS&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00695c;fontColor=#ffffff;strokeColor=#004d40;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="290" width="290" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#00695c;strokeWidth=2;" edge="1" source="center" target="b3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-1" value="time_series_timestamp_col&lt;br&gt;&lt;i&gt;DATE / DATETIME / TIMESTAMP — required&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#00695c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="530" y="130" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#00695c;" edge="1" source="b3" target="b3-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-2" value="time_series_data_col&lt;br&gt;&lt;i&gt;numeric label to forecast — required&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#00695c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="770" y="130" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#00695c;" edge="1" source="b3" target="b3-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-3" value="time_series_id_col&lt;br&gt;&lt;i&gt;one model per unique ID value&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#00695c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="130" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#00695c;" edge="1" source="b3" target="b3-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-4" value="horizon&lt;br&gt;&lt;i&gt;periods ahead to forecast (default 1000)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#00695c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="530" y="200" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#00695c;" edge="1" source="b3" target="b3-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-5" value="data_frequency&lt;br&gt;&lt;i&gt;DAILY / WEEKLY / MONTHLY / AUTO&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#00695c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="770" y="200" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#00695c;" edge="1" source="b3" target="b3-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-6" value="holiday_region&lt;br&gt;&lt;i&gt;US / GB / JP / IN / AU / etc.&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b2dfdb;strokeColor=#00695c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="200" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-6" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#00695c;" edge="1" source="b3" target="b3-6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 4: EVAL METRICS (top-right) ===== -->
+        <mxCell id="b4" value="&lt;b&gt;Eval Metrics&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bf360c;fontColor=#ffffff;strokeColor=#870000;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="240" width="175" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#bf360c;strokeWidth=2;" edge="1" source="center" target="b4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-1" value="MAE — Mean Absolute Error&lt;br&gt;&lt;i&gt;avg absolute deviation&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1710" y="80" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b4" target="b4-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-2" value="RMSE — Root Mean Squared Error&lt;br&gt;&lt;i&gt;same units as label&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1710" y="145" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b4" target="b4-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-3" value="MAPE — Mean Abs % Error&lt;br&gt;&lt;i&gt;scale-independent, compare across series&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1710" y="210" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b4" target="b4-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-4" value="sMAPE — Symmetric MAPE&lt;br&gt;&lt;i&gt;treats over/under-prediction equally&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1710" y="275" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b4" target="b4-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-5" value="AIC — Akaike Info Criterion&lt;br&gt;&lt;i&gt;model selection — lower = better fit&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1710" y="340" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b4" target="b4-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 5: ML.FORECAST OUTPUT (bottom-right) ===== -->
+        <mxCell id="b5" value="&lt;b&gt;ML.FORECAST Output&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a1b9a;fontColor=#ffffff;strokeColor=#4a148c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="680" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6a1b9a;strokeWidth=2;" edge="1" source="center" target="b5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-1" value="forecast_timestamp&lt;br&gt;&lt;i&gt;future time point&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="560" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b5" target="b5-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-2" value="forecast_value&lt;br&gt;&lt;i&gt;point prediction&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="625" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b5" target="b5-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-3" value="prediction_interval_lower/upper&lt;br&gt;&lt;i&gt;confidence interval bounds&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="690" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b5" target="b5-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-4" value="standard_error&lt;br&gt;&lt;i&gt;forecast uncertainty&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="755" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b5" target="b5-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 6: EXPLAIN_FORECAST COMPONENTS (bottom-centre) ===== -->
+        <mxCell id="b6" value="&lt;b&gt;ML.EXPLAIN_FORECAST Components&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f57f17;fontColor=#ffffff;strokeColor=#e65100;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="920" width="290" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#f57f17;strokeWidth=2;" edge="1" source="center" target="b6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-1" value="trend&lt;br&gt;&lt;i&gt;long-term direction&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1040" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b6" target="b6-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-2" value="seasonal_period_yearly/weekly&lt;br&gt;&lt;i&gt;seasonal patterns&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1040" width="175" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b6" target="b6-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-3" value="holiday_effect&lt;br&gt;&lt;i&gt;public holiday impact&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="765" y="1040" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b6" target="b6-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-4" value="spikes_and_dips&lt;br&gt;&lt;i&gt;anomaly adjustments&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="945" y="1040" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b6" target="b6-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-5" value="step_changes + residual&lt;br&gt;&lt;i&gt;level shifts + unexplained&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1125" y="1040" width="175" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b6" target="b6-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 7: MULTIPLE SERIES (middle-right) ===== -->
+        <mxCell id="b7" value="&lt;b&gt;Multiple Time Series&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#37474f;fontColor=#ffffff;strokeColor=#1c313a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="460" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#37474f;strokeWidth=2;" edge="1" source="center" target="b7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-1" value="time_series_id_col groups data&lt;br&gt;&lt;i&gt;one ARIMA model per unique ID&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="410" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b7" target="b7-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-2" value="All series trained in one SQL call&lt;br&gt;&lt;i&gt;output includes time_series_id col&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1740" y="475" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b7" target="b7-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EXAM TIPS BOX ===== -->
+        <mxCell id="tips" value="&lt;b&gt;Exam Tips&lt;/b&gt;&lt;br&gt;- Use ML.FORECAST not ML.PREDICT&lt;br&gt;- ML.EVALUATE needs no input table&lt;br&gt;- Timestamp col must be DATE/DATETIME/TIMESTAMP&lt;br&gt;- XREG needs future regressor values for forecast&lt;br&gt;- MAPE is scale-independent — best for multi-series compare&lt;br&gt;- AIC used by auto-ARIMA to pick best (p,d,q)&lt;br&gt;- holiday_region needs decompose_time_series=TRUE&lt;br&gt;- time_series_id_col trains N independent models" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f9a825;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="810" y="1120" width="310" height="155" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

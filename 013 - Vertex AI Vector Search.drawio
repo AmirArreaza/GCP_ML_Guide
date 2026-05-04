@@ -1,0 +1,285 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram name="Vertex AI Vector Search" id="vertex-vector-search">
+    <mxGraphModel dx="1800" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2700" pageHeight="1900" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== CENTRAL NODE ===== -->
+        <mxCell id="center" value="&lt;b&gt;Vertex AI Vector Search&lt;/b&gt;&lt;br&gt;&lt;i&gt;(formerly Matching Engine)&lt;/i&gt;&lt;br&gt;ANN · ScaNN · Sub-10ms Latency" style="ellipse;whiteSpace=wrap;html=1;fillColor=#880e4f;fontColor=#ffffff;strokeColor=#560027;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="710" width="310" height="115" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 1: WORKFLOW (top-centre) ===== -->
+        <mxCell id="b1" value="&lt;b&gt;Workflow (V1.0)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1565c0;fontColor=#ffffff;strokeColor=#0d47a1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="400" width="310" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1565c0;strokeWidth=2;" edge="1" source="center" target="b1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-1" value="[1] Prepare embeddings&lt;br&gt;&lt;i&gt;JSONL in GCS — id + embedding&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="200" width="205" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-2" value="[2] create_tree_ah_index()&lt;br&gt;&lt;i&gt;ANN Tree-AH index from GCS&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="805" y="200" width="205" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-3" value="[3] MatchingEngineIndexEndpoint.create()&lt;br&gt;&lt;i&gt;public or private VPC endpoint&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="200" width="230" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-4" value="[4] endpoint.deploy_index()&lt;br&gt;&lt;i&gt;min/max_replica_count autoscaling&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="200" width="205" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-5" value="[5] endpoint.find_neighbors()&lt;br&gt;&lt;i&gt;ANN query — top-K results in ms&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1505" y="200" width="205" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 2: INDEX CONFIG (left-top) ===== -->
+        <mxCell id="b2" value="&lt;b&gt;Index Configuration&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;fontColor=#ffffff;strokeColor=#1b5e20;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="440" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#2e7d32;strokeWidth=2;" edge="1" source="center" target="b2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-1" value="dimensions=768&lt;br&gt;&lt;i&gt;must match embedding model output&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="280" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;strokeWidth=2;" edge="1" source="b2" target="b2-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-2" value="approximate_neighbors_count&lt;br&gt;&lt;i&gt;ANN candidates — higher = more recall&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="348" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-3" value="leaf_node_embedding_count&lt;br&gt;&lt;i&gt;vectors per leaf — smaller = finer clusters&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="416" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-4" value="leaf_nodes_to_search_percent&lt;br&gt;&lt;i&gt;% of tree scanned — higher = better recall&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="484" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-5" value="STREAM_UPDATE vs BATCH_UPDATE&lt;br&gt;&lt;i&gt;realtime incremental vs bulk refresh&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="552" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 3: DISTANCE MEASURES (left-bottom) ===== -->
+        <mxCell id="b3" value="&lt;b&gt;Distance Measures&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e65100;fontColor=#ffffff;strokeColor=#bf360c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="870" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#e65100;strokeWidth=2;" edge="1" source="center" target="b3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-1" value="DOT_PRODUCT_DISTANCE&lt;br&gt;&lt;i&gt;normalised vectors — most common choice&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="700" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;" edge="1" source="b3" target="b3-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-2" value="COSINE_DISTANCE&lt;br&gt;&lt;i&gt;angle only — non-unit vectors&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="768" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e65100;" edge="1" source="b3" target="b3-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-3" value="SQUARED_L2_DISTANCE&lt;br&gt;&lt;i&gt;Euclidean — magnitude-sensitive&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="836" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e65100;" edge="1" source="b3" target="b3-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-4" value="L1_DISTANCE&lt;br&gt;&lt;i&gt;Manhattan — outlier-robust&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="904" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e65100;" edge="1" source="b3" target="b3-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 4: ANN vs BRUTE FORCE (right-top) ===== -->
+        <mxCell id="b4" value="&lt;b&gt;ANN vs Brute Force&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a1b9a;fontColor=#ffffff;strokeColor=#4a148c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1870" y="380" width="230" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6a1b9a;strokeWidth=2;" edge="1" source="center" target="b4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-1" value="Tree-AH (ANN) = production&lt;br&gt;&lt;i&gt;fast, approximate, ~99% recall&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="240" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;strokeWidth=2;" edge="1" source="b4" target="b4-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-2" value="Brute Force = evaluation ONLY&lt;br&gt;&lt;i&gt;exact NN — never use in production&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="308" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;" edge="1" source="b4" target="b4-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-3" value="Recall = ANN_correct / num_neighbors&lt;br&gt;&lt;i&gt;measure ANN quality vs brute force&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="376" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-4" value="ScaNN algorithm powers ANN&lt;br&gt;&lt;i&gt;same tech as Google Search + YouTube&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="444" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 5: ENDPOINT TYPES (right-middle) ===== -->
+        <mxCell id="b5" value="&lt;b&gt;Endpoint Types&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bf360c;fontColor=#ffffff;strokeColor=#870000;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1870" y="680" width="230" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#bf360c;strokeWidth=2;" edge="1" source="center" target="b5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-1" value="Public Endpoint&lt;br&gt;&lt;i&gt;internet-accessible — IAM-secured&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="555" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b5" target="b5-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-2" value="Private VPC Endpoint&lt;br&gt;&lt;i&gt;requires VPC peering — lowest latency&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="623" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;strokeWidth=2;" edge="1" source="b5" target="b5-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-3" value="min/max_replica_count&lt;br&gt;&lt;i&gt;autoscaling based on query load&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="691" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b5" target="b5-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 6: FILTERING + HYBRID (right-bottom) ===== -->
+        <mxCell id="b6" value="&lt;b&gt;Filtering &amp; Hybrid Search&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#37474f;fontColor=#ffffff;strokeColor=#1c313a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1870" y="950" width="230" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#37474f;strokeWidth=2;" edge="1" source="center" target="b6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-1" value="Namespace (restricts)&lt;br&gt;&lt;i&gt;categorical filter — allow_tokens&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="850" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b6" target="b6-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-2" value="NumericNamespace&lt;br&gt;&lt;i&gt;numeric filter — year, price, etc.&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="918" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b6" target="b6-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-3" value="HybridQuery (dense + sparse)&lt;br&gt;&lt;i&gt;rrf_ranking_alpha: 0=keyword, 1=semantic&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="986" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b6" target="b6-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-4" value="crowding_tag&lt;br&gt;&lt;i&gt;diversify results — avoid repetition&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="1054" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b6" target="b6-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 7: UPDATES + V2.0 (bottom-centre) ===== -->
+        <mxCell id="b7" value="&lt;b&gt;Index Updates &amp; Vector Search 2.0&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f57f17;fontColor=#ffffff;strokeColor=#e65100;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1200" width="310" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#f57f17;strokeWidth=2;" edge="1" source="center" target="b7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-1" value="index.upsert_datapoints()&lt;br&gt;&lt;i&gt;streaming add / update vectors&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1370" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b7" target="b7-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-2" value="index.remove_datapoints()&lt;br&gt;&lt;i&gt;delete vectors by ID&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="1370" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b7" target="b7-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-3" value="V2.0: Collections of Data Objects&lt;br&gt;&lt;i&gt;unified storage, auto-tuned — simpler&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="1370" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b7" target="b7-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b7-4" value="RAG Engine backend&lt;br&gt;&lt;i&gt;VertexVectorSearch in corpus config&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f57f17;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1305" y="1370" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b7-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#f57f17;" edge="1" source="b7" target="b7-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CORE CONCEPTS BOX ===== -->
+        <mxCell id="concepts" value="&lt;b&gt;Core Concepts&lt;/b&gt;&lt;br&gt;Index = ANN structure built from embeddings&lt;br&gt;Endpoint = serving layer for queries&lt;br&gt;Deployed Index = index live on endpoint&lt;br&gt;Recall = ANN accuracy vs brute force&lt;br&gt;Restrict = filter on namespace attributes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#880e4f;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="578" width="310" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EXAM TIPS BOX ===== -->
+        <mxCell id="tips" value="&lt;b&gt;Exam Tips&lt;/b&gt;&lt;br&gt;- Formerly called Matching Engine&lt;br&gt;- Tree-AH = production ANN; brute force = eval only&lt;br&gt;- dimensions must match embedding model exactly&lt;br&gt;- DOT_PRODUCT = most common for normalised embeddings&lt;br&gt;- STREAM_UPDATE = realtime; BATCH_UPDATE = bulk&lt;br&gt;- Private VPC endpoint = lowest latency (needs peering)&lt;br&gt;- Brute force NEVER in production — ground truth only&lt;br&gt;- Recall = ANN_correct / num_neighbors&lt;br&gt;- HybridQuery: rrf_ranking_alpha 0=keyword, 1=semantic&lt;br&gt;- V2.0 = Collections + Data Objects (GA 2026)&lt;br&gt;- Index creation takes 10min–1hr for large datasets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f9a825;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1515" width="340" height="215" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

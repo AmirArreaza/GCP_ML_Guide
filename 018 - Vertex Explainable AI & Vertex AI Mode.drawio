@@ -1,0 +1,244 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram name="Vertex XAI and Model Monitoring" id="vertex-xai-monitoring">
+    <mxGraphModel dx="1800" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2800" pageHeight="2000" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== CENTRAL NODE ===== -->
+        <mxCell id="center" value="&lt;b&gt;Vertex AI&lt;/b&gt;&lt;br&gt;&lt;b&gt;Explainability &amp; Monitoring&lt;/b&gt;&lt;br&gt;&lt;i&gt;Why did it predict that? Is it still working?&lt;/i&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1a237e;fontColor=#ffffff;strokeColor=#0d1457;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="840" width="360" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════
+             PART 1 — VERTEX EXPLAINABLE AI (top half)
+        ════════════════════════════════════════════════ -->
+
+        <!-- BRANCH 1: Attribution Methods (top-centre) -->
+        <mxCell id="b1" value="&lt;b&gt;Vertex Explainable AI&lt;br&gt;Attribution Methods&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4527a0;fontColor=#ffffff;strokeColor=#311b92;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="480" width="360" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#4527a0;strokeWidth=2;" edge="1" source="center" target="b1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-1" value="Sampled Shapley&lt;br&gt;&lt;i&gt;ANY model type · non-differentiable OK&lt;br&gt;AutoML tabular default&lt;/i&gt;&lt;br&gt;param: path_count" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede7f6;strokeColor=#4527a0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="245" width="215" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#4527a0;" edge="1" source="b1" target="b1-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-2" value="Integrated Gradients (IG)&lt;br&gt;&lt;i&gt;Differentiable models ONLY&lt;br&gt;TF/Keras neural networks&lt;/i&gt;&lt;br&gt;param: step_count" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede7f6;strokeColor=#4527a0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="900" y="245" width="215" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#4527a0;" edge="1" source="b1" target="b1-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-3" value="XRAI&lt;br&gt;&lt;i&gt;Image models · region-level&lt;br&gt;highlights superpixels&lt;/i&gt;&lt;br&gt;param: step_count" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede7f6;strokeColor=#4527a0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="245" width="215" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#4527a0;" edge="1" source="b1" target="b1-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Decision rule callout -->
+        <mxCell id="b1-rule" value="&lt;b&gt;Method Selector&lt;/b&gt;&lt;br&gt;Neural net → IG (or XRAI for images)&lt;br&gt;Tree/ensemble → Sampled Shapley&lt;br&gt;AutoML tabular → Sampled Shapley (auto)&lt;br&gt;&lt;i&gt;IG does NOT work on non-differentiable models&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="245" width="235" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-rule" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;dashed=1;" edge="1" source="b1" target="b1-rule" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- BRANCH 2: XAI Key Concepts (left-top) -->
+        <mxCell id="b2" value="&lt;b&gt;XAI Key Concepts&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1565c0;fontColor=#ffffff;strokeColor=#0d47a1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="560" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1565c0;strokeWidth=2;" edge="1" source="center" target="b2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-1" value="Baseline&lt;br&gt;&lt;i&gt;reference input — attribution = output(input) − output(baseline)&lt;br&gt;default: zeros · better: median values&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="395" width="225" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b2" target="b2-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-2" value="Attribution score&lt;br&gt;&lt;i&gt;positive = pushed prediction up&lt;br&gt;negative = pushed prediction down&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="480" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b2" target="b2-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-3" value="Local vs Global&lt;br&gt;&lt;i&gt;Local = per prediction · Global = aggregate over dataset&lt;br&gt;Global via batch explanations&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="554" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b2" target="b2-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-4" value="Approximation error&lt;br&gt;&lt;i&gt;returned with each explanation&lt;br&gt;&lt; 0.05 difference = may need better baselines&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="628" width="225" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b2" target="b2-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- BRANCH 3: XAI API (right-top) -->
+        <mxCell id="b3" value="&lt;b&gt;XAI API Usage&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;fontColor=#ffffff;strokeColor=#1b5e20;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1990" y="560" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#2e7d32;strokeWidth=2;" edge="1" source="center" target="b3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-1" value="Model.upload(explanation_metadata,&lt;br&gt;explanation_parameters)&lt;br&gt;&lt;i&gt;configure at model upload time&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="390" width="225" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b3" target="b3-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-2" value="endpoint.explain(instances=[...])&lt;br&gt;&lt;i&gt;online — use instead of .predict()&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="462" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b3" target="b3-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-3" value="batch_predict(generate_explanation=True)&lt;br&gt;&lt;i&gt;batch — returns attributions per instance&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="530" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b3" target="b3-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-4" value="AutoML tabular: no config needed&lt;br&gt;&lt;i&gt;Sampled Shapley auto-enabled&lt;br&gt;TF2: ExplanationMetadata optional&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="598" width="225" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;" edge="1" source="b3" target="b3-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════
+             PART 2 — MODEL MONITORING (bottom half)
+        ════════════════════════════════════════════════ -->
+
+        <!-- BRANCH 4: Skew vs Drift (bottom-centre) -->
+        <mxCell id="b4" value="&lt;b&gt;Vertex AI Model Monitoring&lt;br&gt;Skew vs Drift&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e65100;fontColor=#ffffff;strokeColor=#bf360c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="1190" width="360" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#e65100;strokeWidth=2;" edge="1" source="center" target="b4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-1" value="Training-Serving SKEW&lt;br&gt;&lt;i&gt;Serving ≠ Training distribution&lt;br&gt;Baseline = training data&lt;br&gt;Fix = debug pipeline bug&lt;br&gt;Can exist from day ONE&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="1380" width="215" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;strokeWidth=2;" edge="1" source="b4" target="b4-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-2" value="Inference DRIFT&lt;br&gt;&lt;i&gt;Production distribution changes over time&lt;br&gt;Baseline = past prod data window&lt;br&gt;Fix = retrain the model&lt;br&gt;Develops gradually&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="1380" width="215" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;strokeWidth=2;" edge="1" source="b4" target="b4-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-3" value="Attribution Skew / Drift&lt;br&gt;&lt;i&gt;Feature IMPORTANCE changes&lt;br&gt;Requires XAI + Monitoring together&lt;br&gt;More powerful than raw feature drift&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="1380" width="225" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e65100;" edge="1" source="b4" target="b4-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- BRANCH 5: Monitoring Mechanics (left-bottom) -->
+        <mxCell id="b5" value="&lt;b&gt;Monitoring Mechanics&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#37474f;fontColor=#ffffff;strokeColor=#1c313a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="1100" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#37474f;strokeWidth=2;" edge="1" source="center" target="b5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-1" value="TFDV under the hood&lt;br&gt;&lt;i&gt;TensorFlow Data Validation computes distributions&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="980" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b5" target="b5-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-2" value="Numerical: Jensen-Shannon divergence&lt;br&gt;Categorical: L-infinity distance&lt;br&gt;&lt;i&gt;default threshold: 0.3&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1050" width="225" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b5" target="b5-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-3" value="sample_rate — fraction of requests logged&lt;br&gt;monitor_interval — analysis frequency (min 1 hr)&lt;br&gt;&lt;i&gt;logged to BigQuery table&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1126" width="225" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b5" target="b5-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-4" value="Alerts via email + Cloud Monitoring&lt;br&gt;&lt;i&gt;view histograms in Console&lt;br&gt;Batch: one-time skew only&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1208" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b5" target="b5-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- BRANCH 6: Monitoring Configuration (right-bottom) -->
+        <mxCell id="b6" value="&lt;b&gt;Monitoring Configuration&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a1b9a;fontColor=#ffffff;strokeColor=#4a148c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1990" y="1100" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6a1b9a;strokeWidth=2;" edge="1" source="center" target="b6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-1" value="skew_thresholds per feature&lt;br&gt;&lt;i&gt;training data source required&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="980" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b6" target="b6-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-2" value="drift_thresholds per feature&lt;br&gt;&lt;i&gt;no training data required&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="1048" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b6" target="b6-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-3" value="attribute_skew_thresholds&lt;br&gt;attribute_drift_thresholds&lt;br&gt;&lt;i&gt;for XAI attribution monitoring&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="1116" width="220" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b6" target="b6-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-4" value="ModelDeploymentMonitoringJob.create()&lt;br&gt;&lt;i&gt;Online: skew + drift · Batch: skew only&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2260" y="1190" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b6" target="b6-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EXAM TIPS BOX ===== -->
+        <mxCell id="tips" value="&lt;b&gt;Exam Tips&lt;/b&gt;&lt;br&gt;- Sampled Shapley = any model; IG = differentiable only; XRAI = images&lt;br&gt;- AutoML tabular: Sampled Shapley auto — no config needed&lt;br&gt;- TF2 SavedModel: ExplanationMetadata optional (auto-inferred)&lt;br&gt;- More baselines → lower error (but more latency for IG/XRAI, NOT Shapley)&lt;br&gt;- online: endpoint.explain() · batch: generate_explanation=True&lt;br&gt;- Skew = training≠serving (pipeline bug) · Drift = production changes (retrain)&lt;br&gt;- TFDV computes distributions · default threshold = 0.3&lt;br&gt;- Attribution monitoring requires BOTH XAI + Model Monitoring enabled&lt;br&gt;- Batch monitoring = one-time skew only (no drift)&lt;br&gt;- Cloud Monitoring + email alerts configurable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f9a825;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="1570" width="400" height="225" as="geometry" />
+        </mxCell>
+
+        <!-- ===== XAI + MONITORING INTEGRATION BOX ===== -->
+        <mxCell id="integration" value="&lt;b&gt;XAI + Monitoring Together&lt;/b&gt;&lt;br&gt;Monitor raw features → detect data pipeline issues&lt;br&gt;Monitor attributions → detect model behaviour shifts&lt;br&gt;&lt;br&gt;&lt;i&gt;Example: income distribution stays stable but&lt;br&gt;its attribution drops → model behaviour changed&lt;br&gt;even though the data looks the same&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce4ec;strokeColor=#880e4f;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="1320" width="360" height="130" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

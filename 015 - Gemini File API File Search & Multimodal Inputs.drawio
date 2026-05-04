@@ -1,0 +1,256 @@
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="Claude" version="21.0.0" type="device">
+  <diagram name="Gemini File API" id="gemini-file-api">
+    <mxGraphModel dx="1800" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="2700" pageHeight="1900" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== CENTRAL NODE ===== -->
+        <mxCell id="center" value="&lt;b&gt;Gemini File API&lt;/b&gt;&lt;br&gt;&lt;i&gt;Multimodal File Handling&lt;/i&gt;&lt;br&gt;Images · Video · Audio · Docs" style="ellipse;whiteSpace=wrap;html=1;fillColor=#37474f;fontColor=#ffffff;strokeColor=#1c313a;fontSize=14;fontStyle=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="710" width="310" height="115" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 1: THREE INPUT METHODS (top-centre) ===== -->
+        <mxCell id="b1" value="&lt;b&gt;3 Input Methods&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1565c0;fontColor=#ffffff;strokeColor=#0d47a1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="405" width="310" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#1565c0;strokeWidth=2;" edge="1" source="center" target="b1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-1" value="Files API Upload&lt;br&gt;&lt;i&gt;2 GB max · 48-hr TTL · reusable&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="675" y="195" width="215" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-2" value="Inline Data (base64)&lt;br&gt;&lt;i&gt;~100 MB max · no storage · quick use&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bbdefb;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="910" y="195" width="215" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;" edge="1" source="b1" target="b1-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-3" value="GCS URI / External HTTPS URL&lt;br&gt;&lt;i&gt;persistent · no upload needed&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="195" width="215" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;" edge="1" source="b1" target="b1-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b1-note" value="GCS URIs: Vertex AI only (gs://...)&lt;br&gt;&lt;i&gt;HTTPS URLs: both Vertex AI &amp; Developer API&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#1565c0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="195" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b1-note" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#1565c0;dashed=1;" edge="1" source="b1" target="b1-note" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 2: FILES API WORKFLOW (left-top) ===== -->
+        <mxCell id="b2" value="&lt;b&gt;Files API Workflow&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2e7d32;fontColor=#ffffff;strokeColor=#1b5e20;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="440" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#2e7d32;strokeWidth=2;" edge="1" source="center" target="b2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-1" value="client.files.upload(file=...)&lt;br&gt;&lt;i&gt;returns file.uri + file.name&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="285" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-2" value="Check state: PROCESSING → ACTIVE&lt;br&gt;&lt;i&gt;poll client.files.get() before use&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="353" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-3" value="Use file.uri in generate_content()&lt;br&gt;&lt;i&gt;file_data: {file_uri, mime_type}&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="421" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-4" value="client.files.list()&lt;br&gt;&lt;i&gt;view all uploaded files&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="489" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b2-5" value="client.files.delete(name=...)&lt;br&gt;&lt;i&gt;delete before 48-hr auto-expiry&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#2e7d32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="557" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b2-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#2e7d32;" edge="1" source="b2" target="b2-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 3: LIMITS (left-bottom) ===== -->
+        <mxCell id="b3" value="&lt;b&gt;Limits &amp; Storage&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e65100;fontColor=#ffffff;strokeColor=#bf360c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="870" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#e65100;strokeWidth=2;" edge="1" source="center" target="b3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-1" value="2 GB per file via Files API&lt;br&gt;&lt;i&gt;largest individual upload allowed&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="700" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;" edge="1" source="b3" target="b3-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-2" value="20 GB project storage total&lt;br&gt;&lt;i&gt;across all uploaded files&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="768" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e65100;" edge="1" source="b3" target="b3-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-3" value="48 hours TTL — then auto-deleted&lt;br&gt;&lt;i&gt;files cannot be downloaded via API&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="840" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;" edge="1" source="b3" target="b3-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b3-4" value="Files API is FREE&lt;br&gt;&lt;i&gt;available in all Gemini API regions&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe0b2;strokeColor=#e65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="912" width="215" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b3-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e65100;" edge="1" source="b3" target="b3-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 4: SUPPORTED FILE TYPES (right-top) ===== -->
+        <mxCell id="b4" value="&lt;b&gt;Supported File Types&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6a1b9a;fontColor=#ffffff;strokeColor=#4a148c;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1875" y="390" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#6a1b9a;strokeWidth=2;" edge="1" source="center" target="b4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-1" value="Images: JPEG, PNG, GIF, WebP, HEIC&lt;br&gt;&lt;i&gt;no pixel limit — large = higher latency&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="255" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-2" value="Video: MP4, MPEG, MOV, AVI, WebM&lt;br&gt;&lt;i&gt;~1 fps + audio track (32 tok/sec)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="323" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-3" value="Audio: WAV, MP3, AIFF, AAC, OGG, FLAC&lt;br&gt;&lt;i&gt;32 tokens per second of audio&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="391" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b4-4" value="Documents: PDF, TXT, HTML, CSV&lt;br&gt;&lt;i&gt;Markdown, JSON, Python, XML, RTF&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1bee7;strokeColor=#6a1b9a;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="459" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b4-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6a1b9a;" edge="1" source="b4" target="b4-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 5: CONTEXT CACHING (right-bottom) ===== -->
+        <mxCell id="b5" value="&lt;b&gt;Context Caching&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#bf360c;fontColor=#ffffff;strokeColor=#870000;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1875" y="700" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#bf360c;strokeWidth=2;" edge="1" source="center" target="b5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-1" value="Implicit caching (auto)&lt;br&gt;&lt;i&gt;Vertex AI default — detects identical prefixes&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="565" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b5" target="b5-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-2" value="Explicit caching (manual)&lt;br&gt;&lt;i&gt;CachedContent.create() — guaranteed discount&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="633" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b5" target="b5-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-3" value="Gemini 2.5+: 90% discount on cached tokens&lt;br&gt;Gemini 2.0: 75% discount&lt;br&gt;&lt;i&gt;reduces both cost and latency&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffcdd2;strokeColor=#c62828;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="701" width="225" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#c62828;strokeWidth=2;" edge="1" source="b5" target="b5-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-4" value="Min 2,048 tokens to create cache&lt;br&gt;&lt;i&gt;default TTL: 60 min (adjustable)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="782" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b5" target="b5-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b5-5" value="cached_content_token_count in usage_metadata&lt;br&gt;&lt;i&gt;shows tokens served from cache&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffccbc;strokeColor=#bf360c;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="2125" y="850" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b5-5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#bf360c;" edge="1" source="b5" target="b5-5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== BRANCH 6: BEST PRACTICES (bottom-centre) ===== -->
+        <mxCell id="b6" value="&lt;b&gt;Best Practices &amp; Limitations&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#37474f;fontColor=#ffffff;strokeColor=#1c313a;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1215" width="310" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#37474f;strokeWidth=2;" edge="1" source="center" target="b6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-1" value="Image first in single-image prompts&lt;br&gt;&lt;i&gt;model performs better with image before text&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1395" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b6" target="b6-1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-2" value="Always specify MIME type&lt;br&gt;&lt;i&gt;required in all file_data / inline_data parts&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="810" y="1395" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b6" target="b6-2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-3" value="No spatial precision / medical images&lt;br&gt;&lt;i&gt;model limitations for exact locations&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1395" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b6" target="b6-3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="b6-4" value="Files cannot be downloaded via API&lt;br&gt;&lt;i&gt;write-once, read via URI only&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eceff1;strokeColor=#37474f;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="1395" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e-b6-4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#37474f;" edge="1" source="b6" target="b6-4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== TOKEN RATES BOX ===== -->
+        <mxCell id="tokens" value="&lt;b&gt;Token Rates&lt;/b&gt;&lt;br&gt;Audio: 32 tokens / second&lt;br&gt;Video: ~5 tokens / frame (1 fps)&lt;br&gt;Timestamps: +5–11 tokens per frame&lt;br&gt;Image: fixed per model&lt;br&gt;Count tokens first to check context" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="578" width="310" height="112" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EXAM TIPS BOX ===== -->
+        <mxCell id="tips" value="&lt;b&gt;Exam Tips&lt;/b&gt;&lt;br&gt;- Files API: 2 GB per file, 20 GB project, 48-hr TTL&lt;br&gt;- Files cannot be downloaded — write-once, URI-read&lt;br&gt;- GCS URIs (gs://) work with Vertex AI only&lt;br&gt;- HTTPS external URLs: Jan 2026 update, ~100 MB&lt;br&gt;- Context caching: 90% discount (Gemini 2.5+)&lt;br&gt;- Context caching: 75% discount (Gemini 2.0)&lt;br&gt;- Minimum cache: 2,048 tokens; default TTL: 60 min&lt;br&gt;- Audio: 32 tokens/sec; video: ~5 tokens/frame&lt;br&gt;- Always check file.state == ACTIVE before use&lt;br&gt;- Files API is FREE in all Gemini API regions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f9a825;fontSize=11;align=left;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1535" width="340" height="225" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
