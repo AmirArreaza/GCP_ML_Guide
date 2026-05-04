@@ -1,0 +1,936 @@
+src/01 - Agent Development Kit ADK/COMPARISON.md
+src/01 - Agent Development Kit ADK/requirements.txt
+src/01 - Agent Development Kit ADK/01-starter-agent/fun_facts_agent/__init__.py
+src/01 - Agent Development Kit ADK/01-starter-agent/fun_facts_agent/.env
+src/01 - Agent Development Kit ADK/01-starter-agent/fun_facts_agent/agent.py
+src/01 - Agent Development Kit ADK/01-starter-agent/fun_facts_agent/README.md
+src/01 - Agent Development Kit ADK/01-starter-agent/fun_facts_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/01-starter-agent/fun_facts_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/02-tools-agent/README.md
+src/01 - Agent Development Kit ADK/02-tools-agent/calculator_agent/__init__.py
+src/01 - Agent Development Kit ADK/02-tools-agent/calculator_agent/.env
+src/01 - Agent Development Kit ADK/02-tools-agent/calculator_agent/agent.py
+src/01 - Agent Development Kit ADK/02-tools-agent/calculator_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/02-tools-agent/calculator_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/02-tools-agent/search_agent/__init__.py
+src/01 - Agent Development Kit ADK/02-tools-agent/search_agent/.env
+src/01 - Agent Development Kit ADK/02-tools-agent/search_agent/agent.py
+src/01 - Agent Development Kit ADK/02-tools-agent/search_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/02-tools-agent/search_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/02-tools-agent/time_agent/__init__.py
+src/01 - Agent Development Kit ADK/02-tools-agent/time_agent/.env
+src/01 - Agent Development Kit ADK/02-tools-agent/time_agent/agent.py
+src/01 - Agent Development Kit ADK/02-tools-agent/time_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/02-tools-agent/time_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/03-litellm-agent/README.md
+src/01 - Agent Development Kit ADK/03-litellm-agent/programming_joke_agent/__init__.py
+src/01 - Agent Development Kit ADK/03-litellm-agent/programming_joke_agent/.env
+src/01 - Agent Development Kit ADK/03-litellm-agent/programming_joke_agent/agent.py
+src/01 - Agent Development Kit ADK/03-litellm-agent/programming_joke_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/03-litellm-agent/programming_joke_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/03-litellm-agent/quote_agent/__init__.py
+src/01 - Agent Development Kit ADK/03-litellm-agent/quote_agent/.env
+src/01 - Agent Development Kit ADK/03-litellm-agent/quote_agent/agent.py
+src/01 - Agent Development Kit ADK/03-litellm-agent/quote_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/03-litellm-agent/quote_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/04-structuring_data/README.md
+src/01 - Agent Development Kit ADK/04-structuring_data/blog_agent/__init__.py
+src/01 - Agent Development Kit ADK/04-structuring_data/blog_agent/.env
+src/01 - Agent Development Kit ADK/04-structuring_data/blog_agent/agent.py
+src/01 - Agent Development Kit ADK/04-structuring_data/blog_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/04-structuring_data/blog_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/04-structuring_data/email_agent/__init__.py
+src/01 - Agent Development Kit ADK/04-structuring_data/email_agent/.env
+src/01 - Agent Development Kit ADK/04-structuring_data/email_agent/agent.py
+src/01 - Agent Development Kit ADK/04-structuring_data/email_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/04-structuring_data/email_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/05-agent_no_web/.env
+src/01 - Agent Development Kit ADK/05-agent_no_web/agent.py
+src/01 - Agent Development Kit ADK/05-agent_no_web/README.md
+src/01 - Agent Development Kit ADK/06-persistent-storage/.env
+src/01 - Agent Development Kit ADK/06-persistent-storage/main.py
+src/01 - Agent Development Kit ADK/06-persistent-storage/my_agent_data.db
+src/01 - Agent Development Kit ADK/06-persistent-storage/README.md
+src/01 - Agent Development Kit ADK/06-persistent-storage/utils.py
+src/01 - Agent Development Kit ADK/06-persistent-storage/__pycache__/utils.cpython-313.pyc
+src/01 - Agent Development Kit ADK/06-persistent-storage/memory_agent/__init__.py
+src/01 - Agent Development Kit ADK/06-persistent-storage/memory_agent/agent.py
+src/01 - Agent Development Kit ADK/06-persistent-storage/memory_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/06-persistent-storage/memory_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/README.md
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/__init__.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/.env
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/agent.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/joke_agent/__init__.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/joke_agent/agent.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/joke_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/joke_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/news_agent/__init__.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/news_agent/agent.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/news_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/news_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/stock_agent/__init__.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/stock_agent/agent.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/stock_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/sub_agents/stock_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/tools/__init__.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/tools/tools.py
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/tools/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/07-multi-agent/manager/tools/__pycache__/tools.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/.env
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/main.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/README.md
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/utils.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/__pycache__/utils.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/__init__.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/agent.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/cart_agent/__init__.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/cart_agent/agent.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/cart_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/cart_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/order_agent/__init__.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/order_agent/agent.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/order_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/order_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/product_catalog_agent/__init__.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/product_catalog_agent/agent.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/product_catalog_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/product_catalog_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/returns_agent/__init__.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/returns_agent/agent.py
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/returns_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/08-stateful-multi-agent/shopping_assistant/sub_agents/returns_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_agent/__init__.py
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_agent/.env
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_agent/agent.py
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_agent/README.md
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_model/__init__.py
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_model/.env
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_model/agent.py
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_model/README.md
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_tool/__init__.py
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_tool/.env
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_tool/agent.py
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_tool/README.md
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_tool/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/09-callbacks/before_after_tool/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/README.md
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/__init__.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/.env
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/agent.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/__init__.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/content_generator/__init__.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/content_generator/agent.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/content_generator/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/content_generator/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/seo_optimizer/__init__.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/seo_optimizer/agent.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/seo_optimizer/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/seo_optimizer/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/topic_validator/__init__.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/topic_validator/agent.py
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/topic_validator/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/10-sequential-agent/blog_post_pipeline/subagents/topic_validator/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/__init__.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/.env
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/agent.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/README.md
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/__init__.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/blog_post/__init__.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/blog_post/agent.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/blog_post/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/blog_post/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/email_newsletter/__init__.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/email_newsletter/agent.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/email_newsletter/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/email_newsletter/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/instagram_caption/__init__.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/instagram_caption/agent.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/instagram_caption/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/instagram_caption/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/linkedin_post/__init__.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/linkedin_post/agent.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/linkedin_post/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/linkedin_post/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/twitter_thread/__init__.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/twitter_thread/agent.py
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/twitter_thread/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/11-parallel-agent/multichannel_content_creator/subagents/twitter_thread/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/12-loop-agent/iterative_essay_improver/__init__.py
+src/01 - Agent Development Kit ADK/12-loop-agent/iterative_essay_improver/.env
+src/01 - Agent Development Kit ADK/12-loop-agent/iterative_essay_improver/agent.py
+src/01 - Agent Development Kit ADK/12-loop-agent/iterative_essay_improver/README.md
+src/01 - Agent Development Kit ADK/12-loop-agent/iterative_essay_improver/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/12-loop-agent/iterative_essay_improver/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/README.md
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/requirements.txt
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/__init__.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/.env
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/agent.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/config.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/__pycache__/agent.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/__pycache__/config.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__init__.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/add_data.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/create_corpus.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/delete_corpus.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/delete_document.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/get_corpus_info.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/list_corpora.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/rag_query.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/utils.py
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/__init__.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/add_data.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/create_corpus.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/delete_corpus.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/delete_document.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/get_corpus_info.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/list_corpora.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/rag_query.cpython-313.pyc
+src/01 - Agent Development Kit ADK/13-vertex_rag_agent/vertex_rag_agent/tools/__pycache__/utils.cpython-313.pyc
+src/02 - VertexAI Vector DB/vector_search.ipynb
+src/02 - VertexAI Vector DB/vector_search.py
+src/03 - Industry APIs/1_form_parser_demo.ipynb
+src/03 - Industry APIs/1_form_parser_demo.py
+src/03 - Industry APIs/2_form_parser_gradio.ipynb
+src/03 - Industry APIs/2_form_parser_gradio.py
+src/03 - Industry APIs/Form1_Personal_Information.pdf
+src/03 - Industry APIs/Form2_Job_Application.pdf
+src/04 - Feature Store/1_feature_store_online_serving.ipynb
+src/04 - Feature Store/1_feature_store_online_serving.py
+src/05 - Feature Store with Feature Groups/2_feature_store_with_feature_groups.ipynb
+src/05 - Feature Store with Feature Groups/014 - Vertex AI Feature Store.drawio
+src/06 - Gemini File Search API/.env
+src/06 - Gemini File Search API/1_create_store.py
+src/06 - Gemini File Search API/2_upload_documents.py
+src/06 - Gemini File Search API/3_search_basic.py
+src/06 - Gemini File Search API/4_search_advanced.py
+src/06 - Gemini File Search API/5_list_stores.py
+src/06 - Gemini File Search API/6_delete_store.py
+src/06 - Gemini File Search API/7_gradio_ui.py
+src/06 - Gemini File Search API/README.md
+src/06 - Gemini File Search API/requirements.txt
+src/06 - Gemini File Search API/sample_documents/ai_overview.txt
+src/06 - Gemini File Search API/sample_documents/cloud_computing.txt
+src/06 - Gemini File Search API/sample_documents/ml_healthcare.txt
+src/07 - Create AI powered generative apps/.env
+src/07 - Create AI powered generative apps/1. main.py
+src/07 - Create AI powered generative apps/2. travel_planner.py
+src/07 - Create AI powered generative apps/3. study_buddy.py
+src/07 - Create AI powered generative apps/requirements.txt
+data/1 - regression/1 - linear regression.sql
+data/1 - regression/housing.csv
+data/1 - regression/insurance.csv
+data/1 - regression/linear_reg_notebook.ipynb
+data/1 - regression/new_data_for_prediction.csv
+data/1 - regression/Regression with Boosted Trees.sql
+data/2 - classification/2 - binary classification.sql
+data/2 - classification/employee_attrition.csv
+data/2 - classification/Multiclass Classification with Boosted Trees.sql
+data/2 - classification/winequalityN.csv
+data/3 - Time-Series Forecasting/superstore_sales.csv
+data/3 - Time-Series Forecasting/time_series.sql
+data/4 - Matrix Factorization (Recommendation Engine)/Matrix Factorization.sql
+data/4 - Matrix Factorization (Recommendation Engine)/movies.csv
+data/4 - Matrix Factorization (Recommendation Engine)/ratings.csv
+data/5 - Autoencoders/autoencoders.sql
+data/5 - Autoencoders/superstore_sales.csv
+data/6 - Feature Engineering/feature_engg.sql
+data/7 - AutoML/automl_query_classification.sql
+data/7 - AutoML/automl_query_forecast.sql
+data/7 - AutoML/employee_attrition.csv
+data/7 - AutoML/google_test.csv
+data/7 - AutoML/google.csv
+data/7 - AutoML/image/dataset.csv
+data/7 - AutoML/image/test.jsonl
+data/7 - AutoML/image/test/test_1.png
+data/7 - AutoML/image/test/test_2.png
+data/7 - AutoML/image/test/test_3.png
+data/7 - AutoML/image/test/paper/testpaper01-00.png
+data/7 - AutoML/image/test/paper/testpaper01-01.png
+data/7 - AutoML/image/test/paper/testpaper01-02.png
+data/7 - AutoML/image/test/paper/testpaper01-03.png
+data/7 - AutoML/image/test/paper/testpaper01-04.png
+data/7 - AutoML/image/test/paper/testpaper01-05.png
+data/7 - AutoML/image/test/paper/testpaper01-06.png
+data/7 - AutoML/image/test/paper/testpaper01-07.png
+data/7 - AutoML/image/test/paper/testpaper01-08.png
+data/7 - AutoML/image/test/paper/testpaper01-09.png
+data/7 - AutoML/image/test/paper/testpaper01-10.png
+data/7 - AutoML/image/test/paper/testpaper01-11.png
+data/7 - AutoML/image/test/paper/testpaper01-12.png
+data/7 - AutoML/image/test/paper/testpaper01-13.png
+data/7 - AutoML/image/test/paper/testpaper01-14.png
+data/7 - AutoML/image/test/paper/testpaper01-15.png
+data/7 - AutoML/image/test/paper/testpaper01-16.png
+data/7 - AutoML/image/test/paper/testpaper01-17.png
+data/7 - AutoML/image/test/paper/testpaper01-18.png
+data/7 - AutoML/image/test/paper/testpaper01-19.png
+data/7 - AutoML/image/test/paper/testpaper01-20.png
+data/7 - AutoML/image/test/paper/testpaper01-21.png
+data/7 - AutoML/image/test/paper/testpaper01-22.png
+data/7 - AutoML/image/test/paper/testpaper01-23.png
+data/7 - AutoML/image/test/paper/testpaper01-24.png
+data/7 - AutoML/image/test/paper/testpaper01-25.png
+data/7 - AutoML/image/test/paper/testpaper01-26.png
+data/7 - AutoML/image/test/paper/testpaper01-27.png
+data/7 - AutoML/image/test/paper/testpaper01-28.png
+data/7 - AutoML/image/test/paper/testpaper01-29.png
+data/7 - AutoML/image/test/paper/testpaper01-30.png
+data/7 - AutoML/image/test/paper/testpaper02-00.png
+data/7 - AutoML/image/test/paper/testpaper02-01.png
+data/7 - AutoML/image/test/paper/testpaper02-02.png
+data/7 - AutoML/image/test/paper/testpaper02-03.png
+data/7 - AutoML/image/test/paper/testpaper02-04.png
+data/7 - AutoML/image/test/paper/testpaper02-05.png
+data/7 - AutoML/image/test/paper/testpaper02-06.png
+data/7 - AutoML/image/test/paper/testpaper02-07.png
+data/7 - AutoML/image/test/paper/testpaper02-08.png
+data/7 - AutoML/image/test/paper/testpaper02-09.png
+data/7 - AutoML/image/test/paper/testpaper02-10.png
+data/7 - AutoML/image/test/paper/testpaper02-11.png
+data/7 - AutoML/image/test/paper/testpaper02-12.png
+data/7 - AutoML/image/test/paper/testpaper02-13.png
+data/7 - AutoML/image/test/paper/testpaper02-14.png
+data/7 - AutoML/image/test/paper/testpaper02-15.png
+data/7 - AutoML/image/test/paper/testpaper02-16.png
+data/7 - AutoML/image/test/paper/testpaper02-17.png
+data/7 - AutoML/image/test/paper/testpaper02-18.png
+data/7 - AutoML/image/test/paper/testpaper02-19.png
+data/7 - AutoML/image/test/paper/testpaper02-20.png
+data/7 - AutoML/image/test/paper/testpaper02-21.png
+data/7 - AutoML/image/test/paper/testpaper02-22.png
+data/7 - AutoML/image/test/paper/testpaper02-23.png
+data/7 - AutoML/image/test/paper/testpaper02-24.png
+data/7 - AutoML/image/test/paper/testpaper02-25.png
+data/7 - AutoML/image/test/paper/testpaper02-26.png
+data/7 - AutoML/image/test/paper/testpaper02-27.png
+data/7 - AutoML/image/test/paper/testpaper02-28.png
+data/7 - AutoML/image/test/paper/testpaper02-29.png
+data/7 - AutoML/image/test/paper/testpaper02-30.png
+data/7 - AutoML/image/test/paper/testpaper03-00.png
+data/7 - AutoML/image/test/paper/testpaper03-01.png
+data/7 - AutoML/image/test/paper/testpaper03-02.png
+data/7 - AutoML/image/test/paper/testpaper03-03.png
+data/7 - AutoML/image/test/paper/testpaper03-04.png
+data/7 - AutoML/image/test/paper/testpaper03-05.png
+data/7 - AutoML/image/test/paper/testpaper03-06.png
+data/7 - AutoML/image/test/paper/testpaper03-07.png
+data/7 - AutoML/image/test/paper/testpaper03-08.png
+data/7 - AutoML/image/test/paper/testpaper03-09.png
+data/7 - AutoML/image/test/paper/testpaper03-10.png
+data/7 - AutoML/image/test/paper/testpaper03-11.png
+data/7 - AutoML/image/test/paper/testpaper03-12.png
+data/7 - AutoML/image/test/paper/testpaper03-13.png
+data/7 - AutoML/image/test/paper/testpaper03-14.png
+data/7 - AutoML/image/test/paper/testpaper03-15.png
+data/7 - AutoML/image/test/paper/testpaper03-16.png
+data/7 - AutoML/image/test/paper/testpaper03-17.png
+data/7 - AutoML/image/test/paper/testpaper03-18.png
+data/7 - AutoML/image/test/paper/testpaper03-19.png
+data/7 - AutoML/image/test/paper/testpaper03-20.png
+data/7 - AutoML/image/test/paper/testpaper03-21.png
+data/7 - AutoML/image/test/paper/testpaper03-22.png
+data/7 - AutoML/image/test/paper/testpaper03-23.png
+data/7 - AutoML/image/test/paper/testpaper03-24.png
+data/7 - AutoML/image/test/paper/testpaper03-25.png
+data/7 - AutoML/image/test/paper/testpaper03-26.png
+data/7 - AutoML/image/test/paper/testpaper03-27.png
+data/7 - AutoML/image/test/paper/testpaper03-28.png
+data/7 - AutoML/image/test/paper/testpaper03-29.png
+data/7 - AutoML/image/test/paper/testpaper03-30.png
+data/7 - AutoML/image/test/paper/testpaper04-00.png
+data/7 - AutoML/image/test/paper/testpaper04-01.png
+data/7 - AutoML/image/test/paper/testpaper04-02.png
+data/7 - AutoML/image/test/paper/testpaper04-03.png
+data/7 - AutoML/image/test/paper/testpaper04-04.png
+data/7 - AutoML/image/test/paper/testpaper04-05.png
+data/7 - AutoML/image/test/paper/testpaper04-06.png
+data/7 - AutoML/image/test/paper/testpaper04-07.png
+data/7 - AutoML/image/test/paper/testpaper04-08.png
+data/7 - AutoML/image/test/paper/testpaper04-09.png
+data/7 - AutoML/image/test/paper/testpaper04-10.png
+data/7 - AutoML/image/test/paper/testpaper04-11.png
+data/7 - AutoML/image/test/paper/testpaper04-12.png
+data/7 - AutoML/image/test/paper/testpaper04-13.png
+data/7 - AutoML/image/test/paper/testpaper04-14.png
+data/7 - AutoML/image/test/paper/testpaper04-15.png
+data/7 - AutoML/image/test/paper/testpaper04-16.png
+data/7 - AutoML/image/test/paper/testpaper04-17.png
+data/7 - AutoML/image/test/paper/testpaper04-18.png
+data/7 - AutoML/image/test/paper/testpaper04-19.png
+data/7 - AutoML/image/test/paper/testpaper04-20.png
+data/7 - AutoML/image/test/paper/testpaper04-21.png
+data/7 - AutoML/image/test/paper/testpaper04-22.png
+data/7 - AutoML/image/test/paper/testpaper04-23.png
+data/7 - AutoML/image/test/paper/testpaper04-24.png
+data/7 - AutoML/image/test/paper/testpaper04-25.png
+data/7 - AutoML/image/test/paper/testpaper04-26.png
+data/7 - AutoML/image/test/paper/testpaper04-27.png
+data/7 - AutoML/image/test/paper/testpaper04-28.png
+data/7 - AutoML/image/test/paper/testpaper04-29.png
+data/7 - AutoML/image/test/paper/testpaper04-30.png
+data/7 - AutoML/image/test/rock/testrock01-00.png
+data/7 - AutoML/image/test/rock/testrock01-01.png
+data/7 - AutoML/image/test/rock/testrock01-02.png
+data/7 - AutoML/image/test/rock/testrock01-03.png
+data/7 - AutoML/image/test/rock/testrock01-04.png
+data/7 - AutoML/image/test/rock/testrock01-05.png
+data/7 - AutoML/image/test/rock/testrock01-06.png
+data/7 - AutoML/image/test/rock/testrock01-07.png
+data/7 - AutoML/image/test/rock/testrock01-08.png
+data/7 - AutoML/image/test/rock/testrock01-09.png
+data/7 - AutoML/image/test/rock/testrock01-10.png
+data/7 - AutoML/image/test/rock/testrock01-11.png
+data/7 - AutoML/image/test/rock/testrock01-12.png
+data/7 - AutoML/image/test/rock/testrock01-13.png
+data/7 - AutoML/image/test/rock/testrock01-14.png
+data/7 - AutoML/image/test/rock/testrock01-15.png
+data/7 - AutoML/image/test/rock/testrock01-16.png
+data/7 - AutoML/image/test/rock/testrock01-17.png
+data/7 - AutoML/image/test/rock/testrock01-18.png
+data/7 - AutoML/image/test/rock/testrock01-19.png
+data/7 - AutoML/image/test/rock/testrock01-20.png
+data/7 - AutoML/image/test/rock/testrock01-21.png
+data/7 - AutoML/image/test/rock/testrock01-22.png
+data/7 - AutoML/image/test/rock/testrock01-23.png
+data/7 - AutoML/image/test/rock/testrock01-24.png
+data/7 - AutoML/image/test/rock/testrock01-25.png
+data/7 - AutoML/image/test/rock/testrock01-26.png
+data/7 - AutoML/image/test/rock/testrock01-27.png
+data/7 - AutoML/image/test/rock/testrock01-28.png
+data/7 - AutoML/image/test/rock/testrock01-29.png
+data/7 - AutoML/image/test/rock/testrock01-30.png
+data/7 - AutoML/image/test/rock/testrock02-00.png
+data/7 - AutoML/image/test/rock/testrock02-01.png
+data/7 - AutoML/image/test/rock/testrock02-02.png
+data/7 - AutoML/image/test/rock/testrock02-03.png
+data/7 - AutoML/image/test/rock/testrock02-04.png
+data/7 - AutoML/image/test/rock/testrock02-05.png
+data/7 - AutoML/image/test/rock/testrock02-06.png
+data/7 - AutoML/image/test/rock/testrock02-07.png
+data/7 - AutoML/image/test/rock/testrock02-08.png
+data/7 - AutoML/image/test/rock/testrock02-09.png
+data/7 - AutoML/image/test/rock/testrock02-10.png
+data/7 - AutoML/image/test/rock/testrock02-11.png
+data/7 - AutoML/image/test/rock/testrock02-12.png
+data/7 - AutoML/image/test/rock/testrock02-13.png
+data/7 - AutoML/image/test/rock/testrock02-14.png
+data/7 - AutoML/image/test/rock/testrock02-15.png
+data/7 - AutoML/image/test/rock/testrock02-16.png
+data/7 - AutoML/image/test/rock/testrock02-17.png
+data/7 - AutoML/image/test/rock/testrock02-18.png
+data/7 - AutoML/image/test/rock/testrock02-19.png
+data/7 - AutoML/image/test/rock/testrock02-20.png
+data/7 - AutoML/image/test/rock/testrock02-21.png
+data/7 - AutoML/image/test/rock/testrock02-22.png
+data/7 - AutoML/image/test/rock/testrock02-23.png
+data/7 - AutoML/image/test/rock/testrock02-24.png
+data/7 - AutoML/image/test/rock/testrock02-25.png
+data/7 - AutoML/image/test/rock/testrock02-26.png
+data/7 - AutoML/image/test/rock/testrock02-27.png
+data/7 - AutoML/image/test/rock/testrock02-28.png
+data/7 - AutoML/image/test/rock/testrock02-29.png
+data/7 - AutoML/image/test/rock/testrock02-30.png
+data/7 - AutoML/image/test/rock/testrock03-00.png
+data/7 - AutoML/image/test/rock/testrock03-01.png
+data/7 - AutoML/image/test/rock/testrock03-02.png
+data/7 - AutoML/image/test/rock/testrock03-03.png
+data/7 - AutoML/image/test/rock/testrock03-04.png
+data/7 - AutoML/image/test/rock/testrock03-05.png
+data/7 - AutoML/image/test/rock/testrock03-06.png
+data/7 - AutoML/image/test/rock/testrock03-07.png
+data/7 - AutoML/image/test/rock/testrock03-08.png
+data/7 - AutoML/image/test/rock/testrock03-09.png
+data/7 - AutoML/image/test/rock/testrock03-10.png
+data/7 - AutoML/image/test/rock/testrock03-11.png
+data/7 - AutoML/image/test/rock/testrock03-12.png
+data/7 - AutoML/image/test/rock/testrock03-13.png
+data/7 - AutoML/image/test/rock/testrock03-14.png
+data/7 - AutoML/image/test/rock/testrock03-15.png
+data/7 - AutoML/image/test/rock/testrock03-16.png
+data/7 - AutoML/image/test/rock/testrock03-17.png
+data/7 - AutoML/image/test/rock/testrock03-18.png
+data/7 - AutoML/image/test/rock/testrock03-19.png
+data/7 - AutoML/image/test/rock/testrock03-20.png
+data/7 - AutoML/image/test/rock/testrock03-21.png
+data/7 - AutoML/image/test/rock/testrock03-22.png
+data/7 - AutoML/image/test/rock/testrock03-23.png
+data/7 - AutoML/image/test/rock/testrock03-24.png
+data/7 - AutoML/image/test/rock/testrock03-25.png
+data/7 - AutoML/image/test/rock/testrock03-26.png
+data/7 - AutoML/image/test/rock/testrock03-27.png
+data/7 - AutoML/image/test/rock/testrock03-28.png
+data/7 - AutoML/image/test/rock/testrock03-29.png
+data/7 - AutoML/image/test/rock/testrock03-30.png
+data/7 - AutoML/image/test/rock/testrock04-00.png
+data/7 - AutoML/image/test/rock/testrock04-01.png
+data/7 - AutoML/image/test/rock/testrock04-02.png
+data/7 - AutoML/image/test/rock/testrock04-03.png
+data/7 - AutoML/image/test/rock/testrock04-04.png
+data/7 - AutoML/image/test/rock/testrock04-05.png
+data/7 - AutoML/image/test/rock/testrock04-06.png
+data/7 - AutoML/image/test/rock/testrock04-07.png
+data/7 - AutoML/image/test/rock/testrock04-08.png
+data/7 - AutoML/image/test/rock/testrock04-09.png
+data/7 - AutoML/image/test/rock/testrock04-10.png
+data/7 - AutoML/image/test/rock/testrock04-11.png
+data/7 - AutoML/image/test/rock/testrock04-12.png
+data/7 - AutoML/image/test/rock/testrock04-13.png
+data/7 - AutoML/image/test/rock/testrock04-14.png
+data/7 - AutoML/image/test/rock/testrock04-15.png
+data/7 - AutoML/image/test/rock/testrock04-16.png
+data/7 - AutoML/image/test/rock/testrock04-17.png
+data/7 - AutoML/image/test/rock/testrock04-18.png
+data/7 - AutoML/image/test/rock/testrock04-19.png
+data/7 - AutoML/image/test/rock/testrock04-20.png
+data/7 - AutoML/image/test/rock/testrock04-21.png
+data/7 - AutoML/image/test/rock/testrock04-22.png
+data/7 - AutoML/image/test/rock/testrock04-23.png
+data/7 - AutoML/image/test/rock/testrock04-24.png
+data/7 - AutoML/image/test/rock/testrock04-25.png
+data/7 - AutoML/image/test/rock/testrock04-26.png
+data/7 - AutoML/image/test/rock/testrock04-27.png
+data/7 - AutoML/image/test/rock/testrock04-28.png
+data/7 - AutoML/image/test/rock/testrock04-29.png
+data/7 - AutoML/image/test/rock/testrock04-30.png
+data/7 - AutoML/image/test/scissors/testscissors01-00.png
+data/7 - AutoML/image/test/scissors/testscissors01-01.png
+data/7 - AutoML/image/test/scissors/testscissors01-02.png
+data/7 - AutoML/image/test/scissors/testscissors01-03.png
+data/7 - AutoML/image/test/scissors/testscissors01-04.png
+data/7 - AutoML/image/test/scissors/testscissors01-05.png
+data/7 - AutoML/image/test/scissors/testscissors01-06.png
+data/7 - AutoML/image/test/scissors/testscissors01-07.png
+data/7 - AutoML/image/test/scissors/testscissors01-08.png
+data/7 - AutoML/image/test/scissors/testscissors01-09.png
+data/7 - AutoML/image/test/scissors/testscissors01-10.png
+data/7 - AutoML/image/test/scissors/testscissors01-11.png
+data/7 - AutoML/image/test/scissors/testscissors01-12.png
+data/7 - AutoML/image/test/scissors/testscissors01-13.png
+data/7 - AutoML/image/test/scissors/testscissors01-14.png
+data/7 - AutoML/image/test/scissors/testscissors01-15.png
+data/7 - AutoML/image/test/scissors/testscissors01-16.png
+data/7 - AutoML/image/test/scissors/testscissors01-17.png
+data/7 - AutoML/image/test/scissors/testscissors01-18.png
+data/7 - AutoML/image/test/scissors/testscissors01-19.png
+data/7 - AutoML/image/test/scissors/testscissors01-20.png
+data/7 - AutoML/image/test/scissors/testscissors01-21.png
+data/7 - AutoML/image/test/scissors/testscissors01-22.png
+data/7 - AutoML/image/test/scissors/testscissors01-23.png
+data/7 - AutoML/image/test/scissors/testscissors01-24.png
+data/7 - AutoML/image/test/scissors/testscissors01-25.png
+data/7 - AutoML/image/test/scissors/testscissors01-26.png
+data/7 - AutoML/image/test/scissors/testscissors01-27.png
+data/7 - AutoML/image/test/scissors/testscissors01-28.png
+data/7 - AutoML/image/test/scissors/testscissors01-29.png
+data/7 - AutoML/image/test/scissors/testscissors01-30.png
+data/7 - AutoML/image/test/scissors/testscissors02-00.png
+data/7 - AutoML/image/test/scissors/testscissors02-01.png
+data/7 - AutoML/image/test/scissors/testscissors02-02.png
+data/7 - AutoML/image/test/scissors/testscissors02-03.png
+data/7 - AutoML/image/test/scissors/testscissors02-04.png
+data/7 - AutoML/image/test/scissors/testscissors02-05.png
+data/7 - AutoML/image/test/scissors/testscissors02-06.png
+data/7 - AutoML/image/test/scissors/testscissors02-07.png
+data/7 - AutoML/image/test/scissors/testscissors02-08.png
+data/7 - AutoML/image/test/scissors/testscissors02-09.png
+data/7 - AutoML/image/test/scissors/testscissors02-10.png
+data/7 - AutoML/image/test/scissors/testscissors02-11.png
+data/7 - AutoML/image/test/scissors/testscissors02-12.png
+data/7 - AutoML/image/test/scissors/testscissors02-13.png
+data/7 - AutoML/image/test/scissors/testscissors02-14.png
+data/7 - AutoML/image/test/scissors/testscissors02-15.png
+data/7 - AutoML/image/test/scissors/testscissors02-16.png
+data/7 - AutoML/image/test/scissors/testscissors02-17.png
+data/7 - AutoML/image/test/scissors/testscissors02-18.png
+data/7 - AutoML/image/test/scissors/testscissors02-19.png
+data/7 - AutoML/image/test/scissors/testscissors02-20.png
+data/7 - AutoML/image/test/scissors/testscissors02-21.png
+data/7 - AutoML/image/test/scissors/testscissors02-22.png
+data/7 - AutoML/image/test/scissors/testscissors02-23.png
+data/7 - AutoML/image/test/scissors/testscissors02-24.png
+data/7 - AutoML/image/test/scissors/testscissors02-25.png
+data/7 - AutoML/image/test/scissors/testscissors02-26.png
+data/7 - AutoML/image/test/scissors/testscissors02-27.png
+data/7 - AutoML/image/test/scissors/testscissors02-28.png
+data/7 - AutoML/image/test/scissors/testscissors02-29.png
+data/7 - AutoML/image/test/scissors/testscissors02-30.png
+data/7 - AutoML/image/test/scissors/testscissors03-00.png
+data/7 - AutoML/image/test/scissors/testscissors03-01.png
+data/7 - AutoML/image/test/scissors/testscissors03-02.png
+data/7 - AutoML/image/test/scissors/testscissors03-03.png
+data/7 - AutoML/image/test/scissors/testscissors03-04.png
+data/7 - AutoML/image/test/scissors/testscissors03-05.png
+data/7 - AutoML/image/test/scissors/testscissors03-06.png
+data/7 - AutoML/image/test/scissors/testscissors03-07.png
+data/7 - AutoML/image/test/scissors/testscissors03-08.png
+data/7 - AutoML/image/test/scissors/testscissors03-09.png
+data/7 - AutoML/image/test/scissors/testscissors03-10.png
+data/7 - AutoML/image/test/scissors/testscissors03-11.png
+data/7 - AutoML/image/test/scissors/testscissors03-12.png
+data/7 - AutoML/image/test/scissors/testscissors03-13.png
+data/7 - AutoML/image/test/scissors/testscissors03-14.png
+data/7 - AutoML/image/test/scissors/testscissors03-15.png
+data/7 - AutoML/image/test/scissors/testscissors03-16.png
+data/7 - AutoML/image/test/scissors/testscissors03-17.png
+data/7 - AutoML/image/test/scissors/testscissors03-18.png
+data/7 - AutoML/image/test/scissors/testscissors03-19.png
+data/7 - AutoML/image/test/scissors/testscissors03-20.png
+data/7 - AutoML/image/test/scissors/testscissors03-21.png
+data/7 - AutoML/image/test/scissors/testscissors03-22.png
+data/7 - AutoML/image/test/scissors/testscissors03-23.png
+data/7 - AutoML/image/test/scissors/testscissors03-24.png
+data/7 - AutoML/image/test/scissors/testscissors03-25.png
+data/7 - AutoML/image/test/scissors/testscissors03-26.png
+data/7 - AutoML/image/test/scissors/testscissors03-27.png
+data/7 - AutoML/image/test/scissors/testscissors03-28.png
+data/7 - AutoML/image/test/scissors/testscissors03-29.png
+data/7 - AutoML/image/test/scissors/testscissors03-30.png
+data/7 - AutoML/image/test/scissors/testscissors04-00.png
+data/7 - AutoML/image/test/scissors/testscissors04-01.png
+data/7 - AutoML/image/test/scissors/testscissors04-02.png
+data/7 - AutoML/image/test/scissors/testscissors04-03.png
+data/7 - AutoML/image/test/scissors/testscissors04-04.png
+data/7 - AutoML/image/test/scissors/testscissors04-05.png
+data/7 - AutoML/image/test/scissors/testscissors04-06.png
+data/7 - AutoML/image/test/scissors/testscissors04-07.png
+data/7 - AutoML/image/test/scissors/testscissors04-08.png
+data/7 - AutoML/image/test/scissors/testscissors04-09.png
+data/7 - AutoML/image/test/scissors/testscissors04-10.png
+data/7 - AutoML/image/test/scissors/testscissors04-11.png
+data/7 - AutoML/image/test/scissors/testscissors04-12.png
+data/7 - AutoML/image/test/scissors/testscissors04-13.png
+data/7 - AutoML/image/test/scissors/testscissors04-14.png
+data/7 - AutoML/image/test/scissors/testscissors04-15.png
+data/7 - AutoML/image/test/scissors/testscissors04-16.png
+data/7 - AutoML/image/test/scissors/testscissors04-17.png
+data/7 - AutoML/image/test/scissors/testscissors04-18.png
+data/7 - AutoML/image/test/scissors/testscissors04-19.png
+data/7 - AutoML/image/test/scissors/testscissors04-20.png
+data/7 - AutoML/image/test/scissors/testscissors04-21.png
+data/7 - AutoML/image/test/scissors/testscissors04-22.png
+data/7 - AutoML/image/test/scissors/testscissors04-23.png
+data/7 - AutoML/image/test/scissors/testscissors04-24.png
+data/7 - AutoML/image/test/scissors/testscissors04-25.png
+data/7 - AutoML/image/test/scissors/testscissors04-26.png
+data/7 - AutoML/image/test/scissors/testscissors04-27.png
+data/7 - AutoML/image/test/scissors/testscissors04-28.png
+data/7 - AutoML/image/test/scissors/testscissors04-29.png
+data/7 - AutoML/image/test/scissors/testscissors04-30.png
+data/7 - AutoML/image/train/paper/paper01-000.png
+data/7 - AutoML/image/train/paper/paper01-001.png
+data/7 - AutoML/image/train/paper/paper01-002.png
+data/7 - AutoML/image/train/paper/paper01-003.png
+data/7 - AutoML/image/train/paper/paper01-004.png
+data/7 - AutoML/image/train/paper/paper01-005.png
+data/7 - AutoML/image/train/paper/paper01-006.png
+data/7 - AutoML/image/train/paper/paper01-007.png
+data/7 - AutoML/image/train/paper/paper01-008.png
+data/7 - AutoML/image/train/paper/paper01-009.png
+data/7 - AutoML/image/train/paper/paper01-010.png
+data/7 - AutoML/image/train/paper/paper01-011.png
+data/7 - AutoML/image/train/paper/paper01-012.png
+data/7 - AutoML/image/train/paper/paper01-013.png
+data/7 - AutoML/image/train/paper/paper01-014.png
+data/7 - AutoML/image/train/paper/paper01-015.png
+data/7 - AutoML/image/train/paper/paper01-016.png
+data/7 - AutoML/image/train/paper/paper01-017.png
+data/7 - AutoML/image/train/paper/paper01-018.png
+data/7 - AutoML/image/train/paper/paper01-019.png
+data/7 - AutoML/image/train/paper/paper01-020.png
+data/7 - AutoML/image/train/paper/paper01-021.png
+data/7 - AutoML/image/train/paper/paper01-022.png
+data/7 - AutoML/image/train/paper/paper01-023.png
+data/7 - AutoML/image/train/paper/paper01-024.png
+data/7 - AutoML/image/train/paper/paper02-000.png
+data/7 - AutoML/image/train/paper/paper02-001.png
+data/7 - AutoML/image/train/paper/paper02-002.png
+data/7 - AutoML/image/train/paper/paper02-003.png
+data/7 - AutoML/image/train/paper/paper02-004.png
+data/7 - AutoML/image/train/paper/paper02-005.png
+data/7 - AutoML/image/train/paper/paper02-006.png
+data/7 - AutoML/image/train/paper/paper02-007.png
+data/7 - AutoML/image/train/paper/paper02-008.png
+data/7 - AutoML/image/train/paper/paper02-009.png
+data/7 - AutoML/image/train/paper/paper02-010.png
+data/7 - AutoML/image/train/paper/paper02-011.png
+data/7 - AutoML/image/train/paper/paper02-012.png
+data/7 - AutoML/image/train/paper/paper02-013.png
+data/7 - AutoML/image/train/paper/paper02-014.png
+data/7 - AutoML/image/train/paper/paper02-015.png
+data/7 - AutoML/image/train/paper/paper02-016.png
+data/7 - AutoML/image/train/paper/paper02-017.png
+data/7 - AutoML/image/train/paper/paper02-018.png
+data/7 - AutoML/image/train/paper/paper02-019.png
+data/7 - AutoML/image/train/paper/paper02-020.png
+data/7 - AutoML/image/train/paper/paper02-021.png
+data/7 - AutoML/image/train/paper/paper02-022.png
+data/7 - AutoML/image/train/paper/paper02-023.png
+data/7 - AutoML/image/train/paper/paper02-024.png
+data/7 - AutoML/image/train/paper/paper03-000.png
+data/7 - AutoML/image/train/paper/paper03-001.png
+data/7 - AutoML/image/train/paper/paper03-002.png
+data/7 - AutoML/image/train/paper/paper03-003.png
+data/7 - AutoML/image/train/paper/paper03-004.png
+data/7 - AutoML/image/train/paper/paper03-005.png
+data/7 - AutoML/image/train/paper/paper03-006.png
+data/7 - AutoML/image/train/paper/paper03-007.png
+data/7 - AutoML/image/train/paper/paper03-008.png
+data/7 - AutoML/image/train/paper/paper03-009.png
+data/7 - AutoML/image/train/paper/paper03-010.png
+data/7 - AutoML/image/train/paper/paper03-011.png
+data/7 - AutoML/image/train/paper/paper03-012.png
+data/7 - AutoML/image/train/paper/paper03-013.png
+data/7 - AutoML/image/train/paper/paper03-014.png
+data/7 - AutoML/image/train/paper/paper03-015.png
+data/7 - AutoML/image/train/paper/paper03-016.png
+data/7 - AutoML/image/train/paper/paper03-017.png
+data/7 - AutoML/image/train/paper/paper03-018.png
+data/7 - AutoML/image/train/paper/paper03-019.png
+data/7 - AutoML/image/train/paper/paper03-020.png
+data/7 - AutoML/image/train/paper/paper03-021.png
+data/7 - AutoML/image/train/paper/paper03-022.png
+data/7 - AutoML/image/train/paper/paper03-023.png
+data/7 - AutoML/image/train/paper/paper03-024.png
+data/7 - AutoML/image/train/paper/paper04-000.png
+data/7 - AutoML/image/train/paper/paper04-001.png
+data/7 - AutoML/image/train/paper/paper04-002.png
+data/7 - AutoML/image/train/paper/paper04-003.png
+data/7 - AutoML/image/train/paper/paper04-004.png
+data/7 - AutoML/image/train/paper/paper04-005.png
+data/7 - AutoML/image/train/paper/paper04-006.png
+data/7 - AutoML/image/train/paper/paper04-007.png
+data/7 - AutoML/image/train/paper/paper04-008.png
+data/7 - AutoML/image/train/paper/paper04-009.png
+data/7 - AutoML/image/train/paper/paper04-010.png
+data/7 - AutoML/image/train/paper/paper04-011.png
+data/7 - AutoML/image/train/paper/paper04-012.png
+data/7 - AutoML/image/train/paper/paper04-013.png
+data/7 - AutoML/image/train/paper/paper04-014.png
+data/7 - AutoML/image/train/paper/paper04-015.png
+data/7 - AutoML/image/train/paper/paper04-016.png
+data/7 - AutoML/image/train/paper/paper04-017.png
+data/7 - AutoML/image/train/paper/paper04-018.png
+data/7 - AutoML/image/train/paper/paper04-019.png
+data/7 - AutoML/image/train/paper/paper04-020.png
+data/7 - AutoML/image/train/paper/paper04-021.png
+data/7 - AutoML/image/train/paper/paper04-022.png
+data/7 - AutoML/image/train/paper/paper04-023.png
+data/7 - AutoML/image/train/paper/paper04-024.png
+data/7 - AutoML/image/train/rock/rock01-000.png
+data/7 - AutoML/image/train/rock/rock01-001.png
+data/7 - AutoML/image/train/rock/rock01-002.png
+data/7 - AutoML/image/train/rock/rock01-003.png
+data/7 - AutoML/image/train/rock/rock01-004.png
+data/7 - AutoML/image/train/rock/rock01-005.png
+data/7 - AutoML/image/train/rock/rock01-006.png
+data/7 - AutoML/image/train/rock/rock01-007.png
+data/7 - AutoML/image/train/rock/rock01-008.png
+data/7 - AutoML/image/train/rock/rock01-009.png
+data/7 - AutoML/image/train/rock/rock01-010.png
+data/7 - AutoML/image/train/rock/rock01-011.png
+data/7 - AutoML/image/train/rock/rock01-012.png
+data/7 - AutoML/image/train/rock/rock01-013.png
+data/7 - AutoML/image/train/rock/rock01-014.png
+data/7 - AutoML/image/train/rock/rock01-015.png
+data/7 - AutoML/image/train/rock/rock01-016.png
+data/7 - AutoML/image/train/rock/rock01-017.png
+data/7 - AutoML/image/train/rock/rock01-018.png
+data/7 - AutoML/image/train/rock/rock01-019.png
+data/7 - AutoML/image/train/rock/rock01-020.png
+data/7 - AutoML/image/train/rock/rock01-021.png
+data/7 - AutoML/image/train/rock/rock01-022.png
+data/7 - AutoML/image/train/rock/rock01-023.png
+data/7 - AutoML/image/train/rock/rock01-024.png
+data/7 - AutoML/image/train/rock/rock02-000.png
+data/7 - AutoML/image/train/rock/rock02-001.png
+data/7 - AutoML/image/train/rock/rock02-002.png
+data/7 - AutoML/image/train/rock/rock02-003.png
+data/7 - AutoML/image/train/rock/rock02-004.png
+data/7 - AutoML/image/train/rock/rock02-005.png
+data/7 - AutoML/image/train/rock/rock02-006.png
+data/7 - AutoML/image/train/rock/rock02-007.png
+data/7 - AutoML/image/train/rock/rock02-008.png
+data/7 - AutoML/image/train/rock/rock02-009.png
+data/7 - AutoML/image/train/rock/rock02-010.png
+data/7 - AutoML/image/train/rock/rock02-011.png
+data/7 - AutoML/image/train/rock/rock02-012.png
+data/7 - AutoML/image/train/rock/rock02-013.png
+data/7 - AutoML/image/train/rock/rock02-014.png
+data/7 - AutoML/image/train/rock/rock02-015.png
+data/7 - AutoML/image/train/rock/rock02-016.png
+data/7 - AutoML/image/train/rock/rock02-017.png
+data/7 - AutoML/image/train/rock/rock02-018.png
+data/7 - AutoML/image/train/rock/rock02-019.png
+data/7 - AutoML/image/train/rock/rock02-020.png
+data/7 - AutoML/image/train/rock/rock02-021.png
+data/7 - AutoML/image/train/rock/rock02-022.png
+data/7 - AutoML/image/train/rock/rock02-023.png
+data/7 - AutoML/image/train/rock/rock02-024.png
+data/7 - AutoML/image/train/rock/rock03-000.png
+data/7 - AutoML/image/train/rock/rock03-001.png
+data/7 - AutoML/image/train/rock/rock03-002.png
+data/7 - AutoML/image/train/rock/rock03-003.png
+data/7 - AutoML/image/train/rock/rock03-004.png
+data/7 - AutoML/image/train/rock/rock03-005.png
+data/7 - AutoML/image/train/rock/rock03-006.png
+data/7 - AutoML/image/train/rock/rock03-007.png
+data/7 - AutoML/image/train/rock/rock03-008.png
+data/7 - AutoML/image/train/rock/rock03-009.png
+data/7 - AutoML/image/train/rock/rock03-010.png
+data/7 - AutoML/image/train/rock/rock03-011.png
+data/7 - AutoML/image/train/rock/rock03-012.png
+data/7 - AutoML/image/train/rock/rock03-013.png
+data/7 - AutoML/image/train/rock/rock03-014.png
+data/7 - AutoML/image/train/rock/rock03-015.png
+data/7 - AutoML/image/train/rock/rock03-016.png
+data/7 - AutoML/image/train/rock/rock03-017.png
+data/7 - AutoML/image/train/rock/rock03-018.png
+data/7 - AutoML/image/train/rock/rock03-019.png
+data/7 - AutoML/image/train/rock/rock03-020.png
+data/7 - AutoML/image/train/rock/rock03-021.png
+data/7 - AutoML/image/train/rock/rock03-022.png
+data/7 - AutoML/image/train/rock/rock03-023.png
+data/7 - AutoML/image/train/rock/rock03-024.png
+data/7 - AutoML/image/train/rock/rock04-000.png
+data/7 - AutoML/image/train/rock/rock04-001.png
+data/7 - AutoML/image/train/rock/rock04-002.png
+data/7 - AutoML/image/train/rock/rock04-003.png
+data/7 - AutoML/image/train/rock/rock04-004.png
+data/7 - AutoML/image/train/rock/rock04-005.png
+data/7 - AutoML/image/train/rock/rock04-006.png
+data/7 - AutoML/image/train/rock/rock04-007.png
+data/7 - AutoML/image/train/rock/rock04-008.png
+data/7 - AutoML/image/train/rock/rock04-009.png
+data/7 - AutoML/image/train/rock/rock04-010.png
+data/7 - AutoML/image/train/rock/rock04-011.png
+data/7 - AutoML/image/train/rock/rock04-012.png
+data/7 - AutoML/image/train/rock/rock04-013.png
+data/7 - AutoML/image/train/rock/rock04-014.png
+data/7 - AutoML/image/train/rock/rock04-015.png
+data/7 - AutoML/image/train/rock/rock04-016.png
+data/7 - AutoML/image/train/rock/rock04-017.png
+data/7 - AutoML/image/train/rock/rock04-018.png
+data/7 - AutoML/image/train/rock/rock04-019.png
+data/7 - AutoML/image/train/rock/rock04-020.png
+data/7 - AutoML/image/train/rock/rock04-021.png
+data/7 - AutoML/image/train/rock/rock04-022.png
+data/7 - AutoML/image/train/rock/rock04-023.png
+data/7 - AutoML/image/train/rock/rock04-024.png
+data/7 - AutoML/image/train/scissors/scissors01-000.png
+data/7 - AutoML/image/train/scissors/scissors01-001.png
+data/7 - AutoML/image/train/scissors/scissors01-002.png
+data/7 - AutoML/image/train/scissors/scissors01-003.png
+data/7 - AutoML/image/train/scissors/scissors01-004.png
+data/7 - AutoML/image/train/scissors/scissors01-005.png
+data/7 - AutoML/image/train/scissors/scissors01-006.png
+data/7 - AutoML/image/train/scissors/scissors01-007.png
+data/7 - AutoML/image/train/scissors/scissors01-008.png
+data/7 - AutoML/image/train/scissors/scissors01-009.png
+data/7 - AutoML/image/train/scissors/scissors01-010.png
+data/7 - AutoML/image/train/scissors/scissors01-011.png
+data/7 - AutoML/image/train/scissors/scissors01-012.png
+data/7 - AutoML/image/train/scissors/scissors01-013.png
+data/7 - AutoML/image/train/scissors/scissors01-014.png
+data/7 - AutoML/image/train/scissors/scissors01-015.png
+data/7 - AutoML/image/train/scissors/scissors01-016.png
+data/7 - AutoML/image/train/scissors/scissors01-017.png
+data/7 - AutoML/image/train/scissors/scissors01-018.png
+data/7 - AutoML/image/train/scissors/scissors01-019.png
+data/7 - AutoML/image/train/scissors/scissors01-020.png
+data/7 - AutoML/image/train/scissors/scissors01-021.png
+data/7 - AutoML/image/train/scissors/scissors01-022.png
+data/7 - AutoML/image/train/scissors/scissors01-023.png
+data/7 - AutoML/image/train/scissors/scissors01-024.png
+data/7 - AutoML/image/train/scissors/scissors02-000.png
+data/7 - AutoML/image/train/scissors/scissors02-001.png
+data/7 - AutoML/image/train/scissors/scissors02-002.png
+data/7 - AutoML/image/train/scissors/scissors02-003.png
+data/7 - AutoML/image/train/scissors/scissors02-004.png
+data/7 - AutoML/image/train/scissors/scissors02-005.png
+data/7 - AutoML/image/train/scissors/scissors02-006.png
+data/7 - AutoML/image/train/scissors/scissors02-007.png
+data/7 - AutoML/image/train/scissors/scissors02-008.png
+data/7 - AutoML/image/train/scissors/scissors02-009.png
+data/7 - AutoML/image/train/scissors/scissors02-010.png
+data/7 - AutoML/image/train/scissors/scissors02-011.png
+data/7 - AutoML/image/train/scissors/scissors02-012.png
+data/7 - AutoML/image/train/scissors/scissors02-013.png
+data/7 - AutoML/image/train/scissors/scissors02-014.png
+data/7 - AutoML/image/train/scissors/scissors02-015.png
+data/7 - AutoML/image/train/scissors/scissors02-016.png
+data/7 - AutoML/image/train/scissors/scissors02-017.png
+data/7 - AutoML/image/train/scissors/scissors02-018.png
+data/7 - AutoML/image/train/scissors/scissors02-019.png
+data/7 - AutoML/image/train/scissors/scissors02-020.png
+data/7 - AutoML/image/train/scissors/scissors02-021.png
+data/7 - AutoML/image/train/scissors/scissors02-022.png
+data/7 - AutoML/image/train/scissors/scissors02-023.png
+data/7 - AutoML/image/train/scissors/scissors02-024.png
+data/7 - AutoML/image/train/scissors/scissors03-000.png
+data/7 - AutoML/image/train/scissors/scissors03-001.png
+data/7 - AutoML/image/train/scissors/scissors03-002.png
+data/7 - AutoML/image/train/scissors/scissors03-003.png
+data/7 - AutoML/image/train/scissors/scissors03-004.png
+data/7 - AutoML/image/train/scissors/scissors03-005.png
+data/7 - AutoML/image/train/scissors/scissors03-006.png
+data/7 - AutoML/image/train/scissors/scissors03-007.png
+data/7 - AutoML/image/train/scissors/scissors03-008.png
+data/7 - AutoML/image/train/scissors/scissors03-009.png
+data/7 - AutoML/image/train/scissors/scissors03-010.png
+data/7 - AutoML/image/train/scissors/scissors03-011.png
+data/7 - AutoML/image/train/scissors/scissors03-012.png
+data/7 - AutoML/image/train/scissors/scissors03-013.png
+data/7 - AutoML/image/train/scissors/scissors03-014.png
+data/7 - AutoML/image/train/scissors/scissors03-015.png
+data/7 - AutoML/image/train/scissors/scissors03-016.png
+data/7 - AutoML/image/train/scissors/scissors03-017.png
+data/7 - AutoML/image/train/scissors/scissors03-018.png
+data/7 - AutoML/image/train/scissors/scissors03-019.png
+data/7 - AutoML/image/train/scissors/scissors03-020.png
+data/7 - AutoML/image/train/scissors/scissors03-021.png
+data/7 - AutoML/image/train/scissors/scissors03-022.png
+data/7 - AutoML/image/train/scissors/scissors03-023.png
+data/7 - AutoML/image/train/scissors/scissors03-024.png
+data/7 - AutoML/image/train/scissors/scissors04-000.png
+data/7 - AutoML/image/train/scissors/scissors04-001.png
+data/7 - AutoML/image/train/scissors/scissors04-002.png
+data/7 - AutoML/image/train/scissors/scissors04-003.png
+data/7 - AutoML/image/train/scissors/scissors04-004.png
+data/7 - AutoML/image/train/scissors/scissors04-005.png
+data/7 - AutoML/image/train/scissors/scissors04-006.png
+data/7 - AutoML/image/train/scissors/scissors04-007.png
+data/7 - AutoML/image/train/scissors/scissors04-008.png
+data/7 - AutoML/image/train/scissors/scissors04-009.png
+data/7 - AutoML/image/train/scissors/scissors04-010.png
+data/7 - AutoML/image/train/scissors/scissors04-011.png
+data/7 - AutoML/image/train/scissors/scissors04-012.png
+data/7 - AutoML/image/train/scissors/scissors04-013.png
+data/7 - AutoML/image/train/scissors/scissors04-014.png
+data/7 - AutoML/image/train/scissors/scissors04-015.png
+data/7 - AutoML/image/train/scissors/scissors04-016.png
+data/7 - AutoML/image/train/scissors/scissors04-017.png
+data/7 - AutoML/image/train/scissors/scissors04-018.png
+data/7 - AutoML/image/train/scissors/scissors04-019.png
+data/7 - AutoML/image/train/scissors/scissors04-020.png
+data/7 - AutoML/image/train/scissors/scissors04-021.png
+data/7 - AutoML/image/train/scissors/scissors04-022.png
+data/7 - AutoML/image/train/scissors/scissors04-023.png
+data/7 - AutoML/image/train/scissors/scissors04-024.png
+data/7 - AutoML/text/restaurant_reviews_batch_5.jsonl
+data/7 - AutoML/text/restaurant_reviews_train.jsonl
+data/7 - AutoML/text/restaurant_reviews_valid.jsonl
+data/7 - AutoML/text/Restaurant_Reviews.tsv
